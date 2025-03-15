@@ -1,0 +1,144 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 360px;
+  height: 640px;
+  background-color: #18191f;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Ensures toast stays inside */
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.globe-icon {
+  margin-top: 21px;
+  margin-right: 10px;
+}
+/* Toast container inside the black area */
+.toast-container {
+  margin-top: 20px;
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.custom-toast {
+  background-color: #32333b !important;
+  color: white !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  padding: 16px;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  padding-top: 20px;
+  
+  /* Hide scrollbar but allow scrolling */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.content-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.info-box {
+  background-color: #32333b;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  height: 30%;
+  width: 75%;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: start;
+}
+
+.address {
+  font-size: 15px;
+  color: white;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.map-button {
+  background-color: #fcc32c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.map-button:hover {
+  background-color: #269574;
+}
+
+.map-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 5px;
+  background-color: #fcc32c;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 130px;
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #333;
+  font-size: 16px;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: #269574;
+}

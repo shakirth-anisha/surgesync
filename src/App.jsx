@@ -21,55 +21,53 @@ function deg2rad(deg) {
 }
 
 
+function translateTextTo(text, fromLanguage, toLanguage) {
+  if (fromLanguage === toLanguage) {
+    return text;
+  }
+  const options = {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json",
+      "api-subscription-key": "8c0a77b2-0670-4150-aaed-8072b1fbe7dc"
+    },
+    body: JSON.stringify({
+      "input": text,
+      "source_language_code": fromLanguage,
+      "target_language_code": toLanguage,
+      "speaker_gender": "Male",
+      "mode": "formal",
+      "model": "mayura:v1",
+      "enable_preprocessing": false,
+      "output_script": "fully-native",
+      "numerals_format": "international"
+    })
+  };
+
+  return fetch('https://api.sarvam.ai/translate', options)
+    .then(response => response.json())
+    .then(response => {
+      if (response && response.translated_text) {
+        return response.translated_text;
+      } else {
+        console.error("Unexpected response format:", response);
+        return null;
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      return null;
+    });
+}
+
 
 const App = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [language, setLanguage] = useState("English");
 
-  let businessList = [
-      {
-        name: "KSIT",
-        address: "14, Kanakapura Main Rd, Raghuvanahalli, Bangalore City Municipal Corporation Layout, Bengaluru, Karnataka 560109",
-        mapLink: "https://maps.app.goo.gl/NYdxw365JrCfCECP7",
-        lat: 12.8793812,
-        lon: 77.5417201,
-        distance: 0
-      },
-    {
-      name: "PES University",
-      address: "100 Feet Ring Road, Banashankari Stage III, Dwaraka Nagar, Banashankari, Bengaluru, Karnataka 560085",
-      mapLink: "https://maps.app.goo.gl/h3aMipore3qmLaUw5",
-      lat: 12.9350869,
-      lon: 77.5311698,
-      distance: 13.5
-    },
-    {
-      name: "R. V. College of Engineering",
-      address: "Mysore Rd, RV Vidyaniketan, Post, Bengaluru, Karnataka 560059",
-      mapLink: "https://maps.app.goo.gl/4AneBs9Jaks6rNgt6bG5k",
-      lat: 12.9237583,
-      lon: 77.4965718,
-      distance: 15.5
-    },
-    {
-        name: "REVA University",
-        address: "Rukmini Knowledge Park, Yelahanka, Kattigenahalli, Bengaluru, Sathanur, Karnataka 560064",
-        mapLink: "https://maps.app.goo.gl/p6z92eFg8Q3ev92B7",
-        lat: 13.1168797,
-        lon: 77.6297409,
-        distance: 25.5
-    },
-    {
-      name: "JSS Academy Of Technical Education",
-      address: "Uttarahalli-Kengeri Main Road, JSS Campus Rd, Srinivaspura, Bengaluru",
-      mapLink: "https://maps.app.goo.gl/EAUYpxKQCnxVgZSz5",
-      lat: 12.9030349,
-      lon: 77.5021693,
-      distance: 10.5
-    }
-  ]
-
   const [businesses, setBusinesses] = useState([]);
+  const [untranslatedBusinesses, setUntranslatedBusinesses] = useState([]);
+  const [mapOpen, setMapOpen] = useState("Open in Google Maps");
 
   $.ajax({
     url: "http://141.148.195.240:5000/list",
@@ -97,9 +95,15 @@ const App = () => {
               }
               );
               updatedResponse.sort((a, b) => a.distance - b.distance);
-              console.log("Updated Response:", updatedResponse);
-
-              setBusinesses(updatedResponse);
+              if (updatedResponse!=untranslatedBusinesses) {
+                setUntranslatedBusinesses(updatedResponse);
+                updatedResponse.forEach((business) => {
+                  business.name = translateTextTo(business.name, "en-IN", languages[language])
+                  business.address = translateTextTo(business.address, "en-IN", languages[language])
+                }
+                );
+                setBusinesses(updatedResponse);
+              }
             },
             (error) => {
               console.error("Error getting user location:", error);
@@ -141,6 +145,29 @@ const App = () => {
   };
 
   const handleLanguageChange = (lang) => {
+    let oldLanguage = language;
+    let newLanguage = lang;
+    let newBusinesses = [...untranslatedBusinesses]; 
+    newBusinesses.forEach((business) => {
+      translateTextTo(business.name, languages[oldLanguage], languages[newLanguage])
+        .then((translatedName) => {
+          if (translatedName) {
+            console.log(translatedName);
+            business.name = translatedName;
+          }
+        });
+      translateTextTo(business.address, languages[oldLanguage], languages[newLanguage])
+        .then((translatedAddress) => {
+          if (translatedAddress) {
+            console.log(translatedAddress);
+            business.address = translatedAddress;
+          }
+        });
+    });
+
+    setMapOpen(translateTextTo("Open in Google Maps", languages[oldLanguage], languages[newLanguage]));
+    console.log(newBusinesses);
+    setBusinesses(newBusinesses);
     setLanguage(lang);
     setShowDropdown(false); // Hide dropdown after selection
 
@@ -234,7 +261,7 @@ const App = () => {
                     <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
                     <circle cx="12" cy="10" r="3" />
                   </svg>{" "}
-                  &nbsp;&nbsp; Open in Google Maps
+                  &nbsp;&nbsp; {mapOpen}
                 </div>
               </button>
             </div>

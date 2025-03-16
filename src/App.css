@@ -7,29 +7,32 @@
 }
 
 .container {
-  width: 360px;
-  height: 640px;
+  width: 90vw;
+  max-width: 360px;
+  height: 90vh;
+  max-height: 640px;
   background-color: #18191f;
   display: flex;
   flex-direction: column;
-  position: relative; /* Ensures toast stays inside */
+  position: relative;
   overflow: hidden;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  padding: 2vh;
 }
 
 .globe-icon {
-  margin-top: 21px;
-  margin-right: 10px;
+  margin-top: 3vh;
+  margin-right: 2vw;
 }
-/* Toast container inside the black area */
+
 .toast-container {
-  margin-top: 20px;
+  margin-top: 2vh;
   position: absolute;
-  top: 10px;
+  top: 1vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -39,18 +42,14 @@
 .custom-toast {
   background-color: #32333b !important;
   color: white !important;
-  border-radius: 8px !important;
+  border-radius: 0.5rem !important;
   text-align: center !important;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.header {
-  padding: 16px;
+  box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-  height: 80px;
-  width: 80px;
+  height: 10vh;
+  width: 10vh;
 }
 
 .content-wrapper {
@@ -60,53 +59,57 @@
   align-items: center;
   justify-content: flex-start;
   overflow-y: auto;
-  padding-top: 20px;
-  
-  /* Hide scrollbar but allow scrolling */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  padding-top: 3vh;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .content-wrapper::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none;
 }
 
 .info-box {
   background-color: #32333b;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 3vh;
+  border-radius: 1rem;
   text-align: center;
-  height: 30%;
   width: 75%;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 3vh;
+}
+
+.distance {
+  font-size: 0.6rem;
+  color: white;
+  margin-bottom: 1vh;
 }
 
 .name {
-  font-size: 17px;
+  font-size: 1.4rem;
   font-weight: bold;
   color: white;
-  margin-bottom: 8px;
+  margin-bottom: 1vh;
   display: flex;
   justify-content: start;
 }
 
 .address {
-  font-size: 15px;
-  color: white;
-  margin-bottom: 12px;
+  font-size: 0.8rem;
+  color: gray;
+  margin-bottom: 1.5vh;
   display: flex;
   justify-content: flex-start;
+  text-align: left;
 }
 
 .map-button {
   background-color: #fcc32c;
   color: white;
-  padding: 10px 15px;
+  padding: 1vh 2vw;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .map-button:hover {
@@ -121,21 +124,22 @@
 
 .dropdown {
   position: absolute;
-  top: 40px;
-  right: 5px;
+  top: 5vh;
+  right: 1vw;
   background-color: #fcc32c;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 130px;
+  width: 10vw;
+  max-width: 130px;
   z-index: 10;
 }
 
 .dropdown-item {
-  padding: 10px 15px;
+  padding: 1vh 2vw;
   cursor: pointer;
   color: #333;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: left;
 }
 

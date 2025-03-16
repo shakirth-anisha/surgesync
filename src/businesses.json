@@ -1,28 +1,27 @@
 [
-    {
-      "name": "KSIT",
-      "address": "14, Kanakapura Main Rd, Raghuvanahalli, Bangalore City Municipal Corporation Layout, Bengaluru, Karnataka 560109",
-      "mapLink": "https://www.google.com/maps/place/KSIT/@12.8793812,77.5417201,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae3ff4059b97c1:0x9ae119628bd2e43d!8m2!3d12.879376!4d77.544295!16s%2Fm%2F0gy0bx0?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
+  {
+    "name": "KSIT",
+    "address": "14, Kanakapura Main Rd, Raghuvanahalli, Bangalore City Municipal Corporation Layout, Bengaluru, Karnataka 560109",
+    "mapLink": "https://www.google.com/maps/place/KSIT/@12.8793812,77.5417201,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae3ff4059b97c1:0x9ae119628bd2e43d!8m2!3d12.879376!4d77.544295!16s%2Fm%2F0gy0bx0?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
+  },
+  {
+    "name": "PES University",
+    "address": "100 Feet Ring Road, Banashankari Stage III, Dwaraka Nagar, Banashankari, Bengaluru, Karnataka 560085",
+    "mapLink": "https://www.google.com/maps/place/PES+University/@12.9350869,77.5311698,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae3e468d8d36d3:0x694d74f6ac640acf!8m2!3d12.9350817!4d77.5360407!16zL20vMDYwcjB3?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
+  },
+  {
+    "name": "R. V. College of Engineering",
+    "address": "Mysore Rd, RV Vidyaniketan, Post, Bengaluru, Karnataka 560059",
+    "mapLink": "https://www.google.com/maps/place/R.+V.+College+of+Engineering/@12.9237583,77.4965718,17z/data=!4m10!1m2!2m1!1srvce!3m6!1s0x3bae3ee159ba3729:0x75a3463d510cf26e!8m2!3d12.9237228!4d77.4987012!15sCgRydmNlkgEHY29sbGVnZeABAA!16zL20vMDQybG5k?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
+  },
+  {
+      "name": "REVA University",
+      "address": "Rukmini Knowledge Park, Yelahanka, Kattigenahalli, Bengaluru, Sathanur, Karnataka 560064",
+      "mapLink": "https://www.google.com/maps/place/REVA+UNIVERSITY/@13.1168797,77.6297409,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae191736187a37:0x3092096ba7fb4c9b!8m2!3d13.1168745!4d77.6346118!16s%2Fm%2F0pcttht?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
     },
     {
-      "name": "PES University",
-      "address": "100 Feet Ring Road, Banashankari Stage III, Dwaraka Nagar, Banashankari, Bengaluru, Karnataka 560085",
-      "mapLink": "https://www.google.com/maps/place/PES+University/@12.9350869,77.5311698,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae3e468d8d36d3:0x694d74f6ac640acf!8m2!3d12.9350817!4d77.5360407!16zL20vMDYwcjB3?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
-    },
-    {
-      "name": "R. V. College of Engineering",
-      "address": "Mysore Rd, RV Vidyaniketan, Post, Bengaluru, Karnataka 560059",
-      "mapLink": "https://www.google.com/maps/place/R.+V.+College+of+Engineering/@12.9237583,77.4965718,17z/data=!4m10!1m2!2m1!1srvce!3m6!1s0x3bae3ee159ba3729:0x75a3463d510cf26e!8m2!3d12.9237228!4d77.4987012!15sCgRydmNlkgEHY29sbGVnZeABAA!16zL20vMDQybG5k?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
-    },
-    {
-        "name": "REVA University",
-        "address": "Rukmini Knowledge Park, Yelahanka, Kattigenahalli, Bengaluru, Sathanur, Karnataka 560064",
-        "mapLink": "https://www.google.com/maps/place/REVA+UNIVERSITY/@13.1168797,77.6297409,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae191736187a37:0x3092096ba7fb4c9b!8m2!3d13.1168745!4d77.6346118!16s%2Fm%2F0pcttht?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
-      },
-      {
-        "name": "JSS Academy Of Technical Education",
-        "address": "Uttarahalli-Kengeri Main Road, JSS Campus Rd, Srinivaspura, Bengaluru",
-        "mapLink": "https://www.google.com/maps/place/JSS+Academy+Of+Technical+Education/@12.9030349,77.5021693,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae15a006e15e11:0xa3427875cea82218!8m2!3d12.9030297!4d77.5047442!16s%2Fm%2F026qy8t?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
-      }
-  ]
-  
+      "name": "JSS Academy Of Technical Education",
+      "address": "Uttarahalli-Kengeri Main Road, JSS Campus Rd, Srinivaspura, Bengaluru",
+      "mapLink": "https://www.google.com/maps/place/JSS+Academy+Of+Technical+Education/@12.9030349,77.5021693,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae15a006e15e11:0xa3427875cea82218!8m2!3d12.9030297!4d77.5047442!16s%2Fm%2F026qy8t?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
+    }
+]
